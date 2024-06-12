@@ -3035,8 +3035,8 @@ python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </
 <span class="c1"># Upgrade pip</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 
-<span class="c1"># Install Python packages</span>
-pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab<span class="w"> </span>ipykernel<span class="w"> </span>jupyter-book<span class="w"> </span>ghp-import<span class="w"> </span>matplotlib<span class="w"> </span>numpy<span class="w"> </span>wordcloud
+<span class="c1"># Install necessary Python packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab<span class="w"> </span>ipykernel<span class="w"> </span>jupyter-book<span class="w"> </span>ghp-import<span class="w"> </span>matplotlib<span class="w"> </span>numpy<span class="w"> </span>wordcloud<span class="w"> </span>pandas<span class="w"> </span>scipy<span class="w"> </span>seaborn<span class="w"> </span>scikit-learn<span class="w"> </span>tensorflow<span class="w"> </span>keras<span class="w"> </span>plotly<span class="w"> </span>dash<span class="w"> </span>flask<span class="w"> </span>django<span class="w"> </span>pytest<span class="w"> </span>pylint<span class="w"> </span>black<span class="w"> </span>isort<span class="w"> </span>mypy<span class="w"> </span>pydantic<span class="w"> </span>fastapi<span class="w"> </span>uvicorn<span class="w"> </span>requests<span class="w"> </span>beautifulsoup4<span class="w"> </span>sqlalchemy<span class="w"> </span>ipython<span class="w"> </span>tqdm<span class="w"> </span>joblib<span class="w"> </span>sympy<span class="w"> </span>h5py<span class="w"> </span>pyqt5<span class="w"> </span>nbconvert<span class="w"> </span>nbformat<span class="w"> </span>ipywidgets
 
 <span class="c1"># Check if Jupyter Book is installed</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>jb<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
@@ -3070,18 +3070,12 @@ python<span class="w"> </span>-m<span class="w"> </span>stata_kernel.install
 
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Environment setup complete.&quot;</span>
 
-<span class="c1"># Build the Jupyter Book</span>
-jb<span class="w"> </span>build<span class="w"> </span>old
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Failed to build Jupyter Book.&quot;</span>
-<span class="w">    </span>deactivate
-<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Jupyter Book build complete.&quot;</span>
-
 <span class="c1"># Deactivate the virtual environment</span>
 deactivate
+
+<span class="c1"># Print instructions for reactivating the virtual environment</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;To reactivate the virtual environment, use the following command:&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="nv">$ENV_DIR</span><span class="s2">/bin/activate&quot;</span>
 </pre></div>
 </div>
 </section>
