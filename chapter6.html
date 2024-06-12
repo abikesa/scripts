@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -46,7 +46,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -214,9 +214,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -402,7 +402,7 @@ document.write(`
 
 <span class="c1"># Define the word frequencies if specific sizes are required</span>
 <span class="n">word_freqs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Kodeyo&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&quot;Kodheyo&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
     <span class="s2">&quot;Hi&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
     <span class="s2">&quot;Salut&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
     <span class="s2">&quot;Bonjour&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
@@ -424,13 +424,13 @@ document.write(`
     <span class="s2">&quot;Ciau&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">&quot;今日は&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">&quot;سلام&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">&quot;Здрасти&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;Здрасти&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
     <span class="s2">&quot;你好&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">&quot;سلامة&quot;</span><span class="p">:</span> <span class="mi">2</span>
 <span class="p">}</span>
 
 <span class="c1"># Create the word cloud object</span>
-<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">relative_scaling</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">relative_scaling</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
                       <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">collocations</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">generate_from_frequencies</span><span class="p">(</span><span class="n">word_freqs</span><span class="p">)</span>
 
 <span class="c1"># Plot the word cloud</span>
@@ -443,7 +443,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/45e6b6009df798f9de8b0fe61ca6ebefe3df30e72d7cb5cab4c6d5315d98a95c.png"><img alt="_images/45e6b6009df798f9de8b0fe61ca6ebefe3df30e72d7cb5cab4c6d5315d98a95c.png" src="_images/45e6b6009df798f9de8b0fe61ca6ebefe3df30e72d7cb5cab4c6d5315d98a95c.png" style="width: 420px; height: 420px;" /></a>
+<a class="reference internal image-reference" href="_images/caa65c6e372a5cde2ab423dcf6d88305d7946e8353c0b581e661f13f7299604b.png"><img alt="_images/caa65c6e372a5cde2ab423dcf6d88305d7946e8353c0b581e661f13f7299604b.png" src="_images/caa65c6e372a5cde2ab423dcf6d88305d7946e8353c0b581e661f13f7299604b.png" style="width: 420px; height: 420px;" /></a>
 </div>
 </div>
 <p>It seems that the <code class="docutils literal notranslate"><span class="pre">pip</span></code> command is not recognized in your environment. Let’s ensure your virtual environment is activated correctly and that you have <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed. Here are the steps to resolve this:</p>
