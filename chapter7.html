@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Stata &#8212; Multilingual Scripts</title>
+    <title>Remote &#8212; Multilingual Scripts</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bash" href="chapter4.html" />
-    <link rel="prev" title="R" href="chapter2.html" />
+    <link rel="prev" title="Natural" href="chapter6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,11 +179,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapter1.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter2.html">R</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Stata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter4.html">Bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter5.html">Unix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter6.html">Natural</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Remote</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Remote</a></li>
 </ul>
 
     </div>
@@ -256,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter3.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +285,7 @@
       
       
       
-      <li><a href="_sources/chapter3.ipynb" target="_blank"
+      <li><a href="_sources/chapter7.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +356,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -368,11 +369,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Stata</h1>
+    <h1>Remote</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-remote-script">Running the Remote Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example-script">Full Example Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-host-the-script-remotely">Steps to Host the Script Remotely</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -382,110 +393,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stata">
-<h1>Stata<a class="headerlink" href="#stata" title="Link to this heading">#</a></h1>
-<p><img alt="" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_stata_icon_130148.png" /></p>
-<div class="cell tag_hide-input tag_hide-output docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input above-output-prompt docutils container">
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set the seed for reproducibility</span>
-<span class="k">set</span> seed <span class="m">19680801</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="remote">
+<h1>Remote<a class="headerlink" href="#remote" title="Link to this heading">#</a></h1>
+<p><img alt="" src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/csit/2017/07/add8ac45.png" /></p>
+<p>Sure! Here is a remote script that will clone the repository from GitHub and then move the cloned directory to a new name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<span class="c1">// Number of series</span>
-<span class="k">local</span> N <span class="m">10</span>
+<span class="c1"># Step 1: Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/abikesa/scripts
 
-<span class="c1">// Generate data</span>
-<span class="k">clear</span>
-<span class="k">set</span> obs <span class="m">100</span>
+<span class="c1"># Step 2: Move the cloned directory to &#39;multilingual&#39;</span>
+mv<span class="w"> </span>scripts<span class="w"> </span>multilingual
+</pre></div>
+</div>
+<p>To run this script remotely, you can save it to a file, for example, <code class="docutils literal notranslate"><span class="pre">setup_environment.sh</span></code>, in a repository or a remote location accessible via URL. Here is how you can do this using GitHub Gist or any similar service. For the sake of example, I’ll assume you’ve saved the script to a GitHub Gist at <code class="docutils literal notranslate"><span class="pre">https://gist.githubusercontent.com/username/gist-id/raw/setup_environment.sh</span></code>.</p>
+<section id="running-the-remote-script">
+<h2>Running the Remote Script<a class="headerlink" href="#running-the-remote-script" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">curl</span></code> with <code class="docutils literal notranslate"><span class="pre">bash</span></code>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>https://gist.githubusercontent.com/username/gist-id/raw/setup_environment.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+</li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">wget</span></code> with <code class="docutils literal notranslate"><span class="pre">bash</span></code>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://gist.githubusercontent.com/username/gist-id/raw/setup_environment.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="full-example-script">
+<h2>Full Example Script<a class="headerlink" href="#full-example-script" title="Link to this heading">#</a></h2>
+<p>Here is the complete script to be hosted remotely:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<span class="k">forvalues</span> i = <span class="m">0</span><span class="o">/</span><span class="nv">`=`N&#39;-1&#39;</span> {
-<span class="k">    gen</span> series<span class="nv">`i&#39;</span> =<span class="k"> log</span>(_n) <span class="o">+</span> <span class="nf">rnormal</span>() <span class="o">+</span> <span class="nv">`i&#39;</span>
-}
+<span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/abikesa/scripts
 
-<span class="c1">// Reshape the data for plotting</span>
-<span class="k">gen</span> index = _n
-<span class="k">reshape</span> long series, i(index) j(variable)
-
-<span class="c1">// Set up the custom color scheme</span>
-<span class="k">local</span> colors <span class="s">&quot;red blue green orange purple brown pink yellow cyan magenta&quot;</span>
-
-<span class="c1">// Create a macro to hold the plot commands</span>
-<span class="k">local</span> plotcmds <span class="s">&quot;&quot;</span>
-
-<span class="k">forvalues</span> i = <span class="m">0</span><span class="o">/</span><span class="nv">`=`N&#39;-1&#39;</span> {
-<span class="k">    local</span> color = <span class="nf">word</span>(<span class="s">&quot;</span><span class="nv">`colors&#39;</span><span class="s">&quot;</span>, <span class="nv">`=`i&#39;+1&#39;</span>)
-<span class="k">    local</span> plotcmds <span class="nv">`plotcmds&#39;</span> (line series index<span class="k"> if</span> variable <span class="o">==</span> <span class="nv">`i&#39;</span>, lcolor(<span class="s">&quot;</span><span class="nv">`color&#39;</span><span class="s">&quot;</span>))
-}
-
-#delimit ;
-<span class="k">twoway</span> <span class="nv">`plotcmds&#39;</span>,
-    legend(order(<span class="m">1</span> <span class="s">&quot;Series 1&quot;</span> <span class="m">2</span> <span class="s">&quot;Series 2&quot;</span> <span class="m">3</span> <span class="s">&quot;Series 3&quot;</span> <span class="m">4</span> <span class="s">&quot;Series 4&quot;</span> <span class="m">5</span> <span class="s">&quot;Series 5&quot;</span> 
-                 <span class="m">6</span> <span class="s">&quot;Series 6&quot;</span> <span class="m">7</span> <span class="s">&quot;Series 7&quot;</span> <span class="m">8</span> <span class="s">&quot;Series 8&quot;</span> <span class="m">9</span> <span class="s">&quot;Series 9&quot;</span> <span class="m">10</span> <span class="s">&quot;Series 10&quot;</span>))
-    title(<span class="s">&quot;Logarithmic Data with Random Noise&quot;</span>)
-    xtitle(<span class="s">&quot;Index&quot;</span>)
-    ytitle(<span class="s">&quot;Value&quot;</span>);
-
-<span class="k">graph</span> export <span class="s">&quot;stata.png&quot;</span>, width(<span class="m">1000</span>)<span class="k"> replace</span>;
-#delimit cr
+<span class="c1"># Move the cloned directory to &#39;multilingual&#39;</span>
+mv<span class="w"> </span>scripts<span class="w"> </span>multilingual
 </pre></div>
 </div>
-</div>
-</details>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of observations (_N) was 0, now 100.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(j = 0 1 2 3 4 5 6 7 8 9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data                               Wide   -&gt;   Long
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of observations              100   -&gt;   1,000       
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of variables                  11   -&gt;   3           
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>j variable (10 values)                    -&gt;   variable
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xij variables:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            series0 series1 ... series9   -&gt;   series
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file /Users/apollo/.stata_kernel_cache/graph0.svg saved as SVG format
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file /Users/apollo/.stata_kernel_cache/graph0.pdf saved as PDF format
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file stata.png written in PNG format
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
-<p><img alt="" src="_images/stata.png" /></p>
+</section>
+<section id="steps-to-host-the-script-remotely">
+<h2>Steps to Host the Script Remotely<a class="headerlink" href="#steps-to-host-the-script-remotely" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Save the above script to a file named <code class="docutils literal notranslate"><span class="pre">setup_environment.sh</span></code>.</p></li>
+<li><p>Upload <code class="docutils literal notranslate"><span class="pre">setup_environment.sh</span></code> to a GitHub Gist, your own repository, or any other web-accessible location.</p></li>
+<li><p>Use the provided <code class="docutils literal notranslate"><span class="pre">curl</span></code> or <code class="docutils literal notranslate"><span class="pre">wget</span></code> command to run it remotely.</p></li>
+</ol>
+<p>By following these steps, you can easily execute the tasks remotely without manual intervention.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -497,16 +455,16 @@ with your book. For more information about this, see <a class="reference externa
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "stata"
+            mode: "python"
         },
         kernelOptions: {
-            name: "stata",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'stata'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -519,22 +477,13 @@ with your book. For more information about this, see <a class="reference externa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chapter2.html"
+       href="chapter6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">R</p>
+        <p class="prev-next-title">Natural</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="chapter4.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bash</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -542,6 +491,23 @@ with your book. For more information about this, see <a class="reference externa
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-remote-script">Running the Remote Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example-script">Full Example Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-host-the-script-remotely">Steps to Host the Script Remotely</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
