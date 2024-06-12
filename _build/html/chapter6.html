@@ -384,8 +384,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="natural">
 <h1>Natural<a class="headerlink" href="#natural" title="Link to this heading">#</a></h1>
-<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/230px-Python-logo-notext.svg.png" /></p>
-<p>Simulation for illustrative purposes</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -402,7 +400,7 @@ document.write(`
 
 <span class="c1"># Define the word frequencies if specific sizes are required</span>
 <span class="n">word_freqs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Kodheyo&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">&quot;Kodheyo&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
     <span class="s2">&quot;Hi&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
     <span class="s2">&quot;Salut&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
     <span class="s2">&quot;Bonjour&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
@@ -443,46 +441,10 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/9e58163c849a04535d719012e8a2e30c49f54707e6e610f30a41c0e9172f0310.png"><img alt="_images/9e58163c849a04535d719012e8a2e30c49f54707e6e610f30a41c0e9172f0310.png" src="_images/9e58163c849a04535d719012e8a2e30c49f54707e6e610f30a41c0e9172f0310.png" style="width: 420px; height: 420px;" /></a>
+<a class="reference internal image-reference" href="_images/a5d9022b1b91af70e3c5375085e293738dbc4d61c93f07cbeaf548e020bf9587.png"><img alt="_images/a5d9022b1b91af70e3c5375085e293738dbc4d61c93f07cbeaf548e020bf9587.png" src="_images/a5d9022b1b91af70e3c5375085e293738dbc4d61c93f07cbeaf548e020bf9587.png" style="width: 420px; height: 420px;" /></a>
 </div>
 </div>
-<p>It seems that the <code class="docutils literal notranslate"><span class="pre">pip</span></code> command is not recognized in your environment. Let’s ensure your virtual environment is activated correctly and that you have <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed. Here are the steps to resolve this:</p>
-<ol class="arabic">
-<li><p>*<strong>Now worries <code class="docutils literal notranslate"><span class="pre">~/.ssh/id_newworkflow</span></code> fixed this</strong>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>new/setup_environemnt.sh<span class="w">  </span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Otherwise, activate your virtual environment</strong>:
-Make sure you are in the correct directory where your virtual environment is located. If your virtual environment is named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, activate it using:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>myenv/bin/activate
-</pre></div>
-</div>
-</li>
-<li><p><strong>Install <code class="docutils literal notranslate"><span class="pre">pip</span></code> if it’s missing</strong>:
-Check if <code class="docutils literal notranslate"><span class="pre">pip</span></code> is installed in your virtual environment:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>pip
-</pre></div>
-</div>
-<p>If this returns nothing, you need to install <code class="docutils literal notranslate"><span class="pre">pip</span></code> in your virtual environment:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--upgrade
-</pre></div>
-</div>
-</li>
-<li><p><strong>Install <code class="docutils literal notranslate"><span class="pre">wordcloud</span></code></strong>:
-Once <code class="docutils literal notranslate"><span class="pre">pip</span></code> is available, install the necessary packages:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wordcloud<span class="w"> </span>matplotlib
-</pre></div>
-</div>
-</li>
-<li><p><strong>Run the script</strong>:
-Create a new Python file (e.g., <code class="docutils literal notranslate"><span class="pre">generate_wordcloud.py</span></code>) and add the script provided earlier. Then run it:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>generate_wordcloud.py
-</pre></div>
-</div>
-</li>
-</ol>
-<p>By following these steps, you should be able to install the required libraries and run the script to generate the word cloud. If you encounter any issues, please provide the error messages, and I can help troubleshoot further.</p>
+<p>Python has an amazing suit of libraries that R and Stata can’t match. Just upload an image to GPT-4o and ask it to produce code that mimics what you’re looking at. Thats how I got the above <code class="docutils literal notranslate"><span class="pre">wordcloud</span></code> script. Simple!</p>
 </section>
 
     <script type="text/x-thebe-config">
